@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.knowei.springbootinit.mapper.UserArticleMapper">
+
+    <resultMap id="BaseResultMap" type="cn.knowei.springbootinit.entity.UserArticle">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="articleId" column="article_id" jdbcType="BIGINT"/>
+            <result property="userId" column="user_id" jdbcType="BIGINT"/>
+            <result property="articleLike" column="article_like" jdbcType="BIGINT"/>
+            <result property="articleCollect" column="article_collect" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,article_id,user_id,
+        article_like,article_collect
+    </sql>
+</mapper>
