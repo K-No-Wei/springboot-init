@@ -3,15 +3,12 @@ package cn.knowei.springbootinit.config;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.redisson.Redisson;
-import org.redisson.config.Config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
-import org.springframework.stereotype.Component;
 
 import java.net.UnknownHostException;
 
@@ -44,4 +41,21 @@ public class RedisConfig {
         return template;
     }
 
+
+    /**
+     * redisson
+     * @return
+     */
+    // @Bean
+    // public Redisson redisson() {
+    //     Config config = new Config();
+    //     config.useSingleServer()
+    //             .setAddress("redis://127.0.0.1:6379")
+    //             .setDatabase(0);
+    //
+    //     // config.useClusterServers()
+    //     //         .addNodeAddress()
+    //     return (Redisson) Redisson.create(config);
+    //
+    // }
 }

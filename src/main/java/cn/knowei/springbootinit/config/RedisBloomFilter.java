@@ -31,21 +31,21 @@ public class RedisBloomFilter {
 
     @PostConstruct
     public void init() {
-        Boolean hasKey = redisTemplate.hasKey("whiteList");
-        if (hasKey) {
-            return;
-        }
-        List<Movies> movies = moviesMapper.selectList(null);
-        List<Long> longList = movies.stream().map(Movies::getId).collect(Collectors.toList());
-
-        longList.forEach(
-                e -> {
-                    String key = CACHE + e;
-                    int hashValue = Math.abs((key.hashCode()));
-                    long index = (long) (hashValue % Math.pow(2, 32));
-                    // log.info(key + "--对应的位置：{}", index);
-                    redisTemplate.opsForValue().setBit("whiteList", index, true);
-                }
-        );
+        // Boolean hasKey = redisTemplate.hasKey("whiteList");
+        // if (hasKey) {
+        //     return;
+        // }
+        // List<Movies> movies = moviesMapper.selectList(null);
+        // List<Long> longList = movies.stream().map(Movies::getId).collect(Collectors.toList());
+        //
+        // longList.forEach(
+        //         e -> {
+        //             String key = CACHE + e;
+        //             int hashValue = Math.abs((key.hashCode()));
+        //             long index = (long) (hashValue % Math.pow(2, 32));
+        //             // log.info(key + "--对应的位置：{}", index);
+        //             redisTemplate.opsForValue().setBit("whiteList", index, true);
+        //         }
+        // );
     }
 }

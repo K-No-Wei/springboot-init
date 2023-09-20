@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/wxblog
+    username: root
+    password: zlw200208216515
+  # redis 配置
+  redis:
+    port: 6379
+    host: localhost
+    database: 0
+    password: zlw200208216515

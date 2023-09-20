@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.knowei.springbootinit.mapper.TagMapper">
+
+    <resultMap id="BaseResultMap" type="cn.knowei.springbootinit.entity.Tag">
+            <id property="tagId" column="tag_id" jdbcType="BIGINT"/>
+            <result property="tagName" column="tag_name" jdbcType="VARCHAR"/>
+            <result property="tagDes" column="tag_des" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        tag_id,tag_name,tag_des
+    </sql>
+</mapper>
